@@ -13,7 +13,7 @@ class Image:
     
     """
     The image class converts an image into ASCII art which can be printed in the console.
-    In order to get an ascii art, initialize the class with the correct file path and use the method get_image_string() to get the ascii string.
+    In order to get an ascii art, initialize the class with the correct file path and use the method `get_image_string()` to get the ascii string.
     """
     
     CHARACTERS: str = " `.-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@"
@@ -57,6 +57,7 @@ class Image:
         
         width_of_resclaed_image = int(os.get_terminal_size()[0] * size_of_image_in_terminal)
         height_of_rescaled_image = width_of_resclaed_image // 3
+        
         
         rescaled_image_size = width_of_resclaed_image, height_of_rescaled_image
         

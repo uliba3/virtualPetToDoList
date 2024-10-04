@@ -1,16 +1,20 @@
-
+from imageToAscii import Image
 
 class Pet:
     
     """
     The pet is capable of returning strings that are ASCII images. To use them simply print the returned string to the console.
     Eg.
-    print(pet.get_walking_image())
+    ```python
+    my_pet = Pet("Charlie")
+    print(my_pet.get_walking_image())
+    ```
     """
     
     
     def __init__(self, name="Soobin") -> None:
         self.name = name
+        self.smiling_dog_image = Image("vendor/similing_dog.png")
         
     def get_name(self) -> str:
         """
@@ -34,7 +38,7 @@ class Pet:
         """
         Returns a string that looks like the image of a smiling dog.
         """
-        return "Smile"
+        return self.smiling_dog_image.get_image_string()
     
     def add_event(self, event_details) -> None:
         """
