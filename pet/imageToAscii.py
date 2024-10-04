@@ -11,6 +11,11 @@ import os
 
 class Image:
     
+    """
+    The image class converts an image into ASCII art which can be printed in the console.
+    In order to get an ascii art, initialize the class with the correct file path and use the method get_image_string() to get the ascii string.
+    """
+    
     CHARACTERS: str = " `.-':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@"
     
     def __init__(self, file_path: str) -> None:
@@ -38,14 +43,17 @@ class Image:
         
         return "success"
     
-    def get_image_string(self) -> str:
+    def get_image_string(self, terminal_character_size=os.get_terminal_size()) -> str:
+        """
+        Get the string representing the image in with ASCII character.
+        Optionally pass the terminal size (in characters) to adjust the size of the image.
+        By default it uses the 60% of the width of the terminal as the width of the ASCII image.
+        """
+        
         if self.image is None:
             return "Could not read the image."
-            
-        
-        terminal_character_size = os.get_terminal_size()
-        
-        size_of_image_in_terminal  = 0.8
+                    
+        size_of_image_in_terminal  = 0.6
         
         width_of_resclaed_image = int(os.get_terminal_size()[0] * size_of_image_in_terminal)
         height_of_rescaled_image = width_of_resclaed_image // 3
