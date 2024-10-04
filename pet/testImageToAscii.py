@@ -1,8 +1,8 @@
+import os
 import unittest
 
 from imageToAscii import Image
 
-import os
 
 class TestImages(unittest.TestCase):
     def test_get_file_path(self) -> None:
@@ -37,6 +37,12 @@ class TestImages(unittest.TestCase):
         image: Image = Image(file_path)
         
         print(image.get_image_string())
+    
+    def test_image_string_invalid(self) -> None:
+        file_path: str = "./vendor/doesnotexist.png"
+        image: Image = Image(file_path)
+        
+        self.assertEqual(image.get_image_string(), "Could not read the image.")
 
 
 if __name__ == "__main__":
