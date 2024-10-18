@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from imageToAscii import Image
+from pet.imageToAscii import Image
 
 
 class TestImages(unittest.TestCase):

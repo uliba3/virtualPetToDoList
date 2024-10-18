@@ -1,5 +1,7 @@
-from typing_extensions import List
-from imageToAscii import Image
+from typing import List
+from pet.imageToAscii import Image
+import sys 
+
 import todo_manager
 
 class Pet:

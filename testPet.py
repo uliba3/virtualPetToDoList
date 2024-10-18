@@ -1,6 +1,6 @@
 import unittest
     
-from pet import Pet 
+from pet.pet import Pet 
 
 class PetTesting(unittest.TestCase):
     
@@ -28,6 +28,12 @@ class PetTesting(unittest.TestCase):
         
         self.assertEqual(soobin_dog.get_name(), "Soobin")
         self.assertEqual(charlie_dog.get_name(), "Charlie")
+    
+    def test_add_event(self):
+        
+        soobin_dog = Pet()
+        
+        soobin_dog.add_event({"date": 20240104, "Event": "Dance classes", "time": 4000})
         
 
 if __name__ == "__main__":
