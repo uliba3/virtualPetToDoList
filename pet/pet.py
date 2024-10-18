@@ -1,5 +1,8 @@
-from imageToAscii import Image
+from typing import List
+from pet.imageToAscii import Image
+import sys 
 
+import todo_manager
 
 class Pet:
     """
@@ -47,18 +50,23 @@ class Pet:
         """
         Add an event to the TODO list with details event_details.
         """
+        todo_manager.add_event(todo_manager.load_data(), event_details)
     
     def remove_event(self, event_id) -> None:
         """
         Remove an event that has the identifier event_id
         """
+        todo_manager.remove_event(todo_manager.load_data(), event_id)
     
     def modify_event(self, event_id, event_details) -> None:
         """
         Replace the details of an event that has the identifier event_id, with event_details
         """
+        todo_manager.edit_event(todo_manager.load_data(), event_id, event_details)
     
-    def get_all_event(self) -> None:
+    def get_all_event(self) -> List[dict]:
         """
         The function returns all the events that have been added to the TODO list
         """
+        return todo_manager.load_data()
+        
