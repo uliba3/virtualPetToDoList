@@ -15,7 +15,7 @@ class Pet:
     """
     
     
-    def __init__(self, name="Soobin", smiling_dog="vendor/similing_dog.png", walking_dog="vendor/dog.png", barking_dog="vendor/barking_dog.png") -> None:
+    def __init__(self, name="Soobin", smiling_dog="pet/vendor/similing_dog.png", walking_dog="pet/vendor/dog.png", barking_dog="pet/vendor/barking_dog.png") -> None:
         self.name = name
         self.smiling_dog_image = Image(smiling_dog)
         self.walking_dog_image = Image(walking_dog)
@@ -68,5 +68,6 @@ class Pet:
         """
         The function returns all the events that have been added to the TODO list
         """
+        print("Getting all events")
         return todo_manager.load_data()
         
